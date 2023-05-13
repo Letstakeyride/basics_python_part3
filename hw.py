@@ -91,7 +91,6 @@ def test_readable_function():
 
 def parse_function(func, *args):
     parse = func.__name__.replace('_', ' ').title() + f" [{', '.join(args)}]"
-    print(parse)
     return parse
 
 
