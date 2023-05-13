@@ -14,6 +14,9 @@ def test_dark_theme_by_time():
     assert is_dark_theme is True
 
 
+test_dark_theme_by_time()
+
+
 def test_dark_theme_by_time_and_user_choice():
     """
     Протестируйте правильность переключения темной темы на сайте
@@ -36,6 +39,9 @@ def test_dark_theme_by_time_and_user_choice():
     assert is_dark_theme is True
 
 
+test_dark_theme_by_time_and_user_choice()
+
+
 def test_find_suitable_user():
     """
     Найдите нужного пользователя по условиям в списке пользователей
@@ -55,7 +61,6 @@ def test_find_suitable_user():
     assert suitable_users == {"name": "Olga", "age": 45}
     # TODO найдите всех пользователей младше 20 лет
     suitable_users = []
-
     for item in users:
         if item['age'] <= 20:
             suitable_users.append(item)
@@ -84,16 +89,24 @@ def test_readable_function():
     find_registration_button_on_login_page(page_url="https://companyname.com/login", button_text="Register")
 
 
+def parse_function(func, *args):
+    parse = func.__name__.replace('_', ' ').title() + f" [{', '.join(args)}]"
+    print(parse)
+    return parse
+
+
 def open_browser(browser_name):
-    actual_result = None
+    actual_result = parse_function(open_browser, browser_name)
     assert actual_result == "Open Browser [Chrome]"
 
 
 def go_to_companyname_homepage(page_url):
-    actual_result = None
+    actual_result = parse_function(go_to_companyname_homepage, page_url)
     assert actual_result == "Go To Companyname Homepage [https://companyname.com]"
 
 
 def find_registration_button_on_login_page(page_url, button_text):
-    actual_result = None
+    actual_result = parse_function(find_registration_button_on_login_page, page_url, button_text)
     assert actual_result == "Find Registration Button On Login Page [https://companyname.com/login, Register]"
+
+test_readable_function()
