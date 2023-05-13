@@ -14,9 +14,6 @@ def test_dark_theme_by_time():
     assert is_dark_theme is True
 
 
-test_dark_theme_by_time()
-
-
 def test_dark_theme_by_time_and_user_choice():
     """
     Протестируйте правильность переключения темной темы на сайте
@@ -37,9 +34,6 @@ def test_dark_theme_by_time_and_user_choice():
     else:
         is_dark_theme = False
     assert is_dark_theme is True
-
-
-test_dark_theme_by_time_and_user_choice()
 
 
 def test_find_suitable_user():
@@ -68,9 +62,6 @@ def test_find_suitable_user():
         {"name": "Stanislav", "age": 15},
         {"name": "Maria", "age": 18},
     ]
-
-
-test_find_suitable_user()
 
 
 # Сделайте функцию, которая будет печатать
@@ -107,5 +98,3 @@ def go_to_companyname_homepage(page_url):
 def find_registration_button_on_login_page(page_url, button_text):
     actual_result = parse_function(find_registration_button_on_login_page, page_url, button_text)
     assert actual_result == "Find Registration Button On Login Page [https://companyname.com/login, Register]"
-
-test_readable_function()
